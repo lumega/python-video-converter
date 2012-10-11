@@ -83,7 +83,7 @@ class Converter(object):
 
             c = x['codec']
             if c not in self.audio_codecs:
-                raise ConverterError('Requested unknown audio codec ' + str(c))
+                raise ConverterError('Requested unknown audio codec %s. Audio Supported %s'%(str(c),unicode(self.audio_codecs)))
 
             audio_options = self.audio_codecs[c]().parse_options(x)
             if audio_options is None:
@@ -96,7 +96,7 @@ class Converter(object):
 
             c = x['codec']
             if c not in self.video_codecs:
-                raise ConverterError('Requested unknown video codec ' + str(c))
+                raise ConverterError('Requested unknown video codec  %s. Video Supported %s'%(str(c),unicode(self.video_codecs)))
 
             video_options = self.video_codecs[c]().parse_options(x)
             if video_options is None:
