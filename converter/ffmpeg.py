@@ -340,7 +340,7 @@ class FFMpeg(object):
         cmds = [self.ffmpeg_path, '-i', infile]
         cmds.extend(opts)
         cmds.extend(['-y', outfile])
-
+	print "Command executed: %s"%" ".join(cmds)
         def on_sigalrm(*args):
             signal.signal(signal.SIGALRM, signal.SIG_DFL)
             raise Exception('timed out while waiting for ffmpeg')
@@ -383,7 +383,7 @@ class FFMpeg(object):
                     yield timecode
 
         signal.signal(signal.SIGALRM, signal.SIG_DFL)
-
+	
         if total_output == '':
             raise FFMpegError('Error while calling ffmpeg binary')
         else:
