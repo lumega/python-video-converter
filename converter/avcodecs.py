@@ -383,6 +383,14 @@ class Vp8Codec(VideoCodec):
     ffmpeg_codec_name = 'vp8'
 
 
+class LibvpxCodec(VideoCodec):
+    """
+    Google VP8 video codec, for ffmpeg version 0.10.5.
+    """
+    codec_name = 'libvpx'
+    ffmpeg_codec_name = 'libvpx'
+
+
 class H263Codec(VideoCodec):
     """
     H.263 video codec.
@@ -446,6 +454,6 @@ audio_codec_list = [
 
 video_codec_list = [
     VideoNullCodec, VideoCopyCodec, TheoraCodec, H264Codec,
-    DivxCodec, Vp8Codec, H263Codec, FlvCodec, Mpeg1Codec,
+    DivxCodec, Vp8Codec, LibvpxCodec, H263Codec, FlvCodec, Mpeg1Codec,
     Mpeg2Codec
 ]
